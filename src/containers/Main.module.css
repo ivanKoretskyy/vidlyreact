@@ -1,0 +1,43 @@
+.Container {
+  background-color: #345445;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.Main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Header {
+  height: 60px;
+}
+.SideNav {
+  background-color: rgb(253, 252, 250);
+  width: 0px;
+  animation: enable 0.5s ease-out forwards;
+  display: none;
+}
+.ShowSideNav {
+  display: flex;
+  animation: enable 0.5s ease-out forwards;
+}
+.MainContent {
+ 
+}
+
+@keyframes enable {
+  0% {
+    min-width: 0px;
+  }
+  50% {
+    min-width: 200px;
+  }
+  100% {
+    min-width: 300px;
+  }
+}
