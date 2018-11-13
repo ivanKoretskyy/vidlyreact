@@ -1,8 +1,9 @@
+@import '../../assets/colors.scss';
 .Navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3b1919;
+  background-color: $primary-blue;
   color: white;
   font-weight: bold;
   border-bottom: 1px solid white;
@@ -10,11 +11,15 @@
   height: 100%;
 }
 .Toggle {
-
+  cursor: pointer;
 }
 .Title {
   font-size: 2rem;
 }
 .LogIn {
-
+  cursor: pointer;
+}
+.Login a {
+  color: white;
+  text-decoration: none;
 }
