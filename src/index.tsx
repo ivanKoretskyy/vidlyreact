@@ -4,16 +4,26 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import reducer from './store/rootReducer';
+import { createEpicMiddleware } from 'redux-observable';
+import  { userEpic }  from './store/epics/userEpic';
+
+
+const epicMiddleware = createEpicMiddleware();
+
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   order: reducer
 })
+
+
 const store = createStore(
   rootReducer,
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+ composeEnhancers(applyMiddleware(epicMiddleware))
 );
+epicMiddleware.run(userEpic);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
