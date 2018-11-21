@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom';
 import classes from './SideBar.module.css'
 
 export interface SideBarProps {
-  
+
 }
- 
+
 export interface SideBarState {
-  
+
 }
- 
+
 class SideBar extends React.Component<SideBarProps, SideBarState> {
- // state = { :  }
-  render() { 
+  // state = { :  }
+  render() {
     return (
       <div className={classes.SidebarContainer}>
         <ul className={classes.NavigationItems}>
@@ -22,9 +22,14 @@ class SideBar extends React.Component<SideBarProps, SideBarState> {
               Dashboard
             </NavLink>
           </li>
-          <li className={classes.NavigationItem}>                    
+          <li className={classes.NavigationItem}>
             <NavLink to='/contacts' activeClassName={classes.active}>
               Contacts
+            </NavLink>
+          </li>
+          <li className={classes.NavigationItem}>
+            <NavLink to='/user' activeClassName={classes.active}>
+              User
             </NavLink>
           </li>
         </ul>
@@ -33,5 +38,5 @@ class SideBar extends React.Component<SideBarProps, SideBarState> {
     );
   }
 }
- 
+
 export default SideBar;
