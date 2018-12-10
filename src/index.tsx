@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import reducer from './store/rootReducer';
 import { createEpicMiddleware } from 'redux-observable';
-import  { userEpic }  from './store/epics/userEpic';
+import { rootEpic } from './store/epics';
 
 
 const epicMiddleware = createEpicMiddleware();
@@ -21,9 +21,9 @@ const rootReducer = combineReducers({
 
 const store = createStore(
   rootReducer,
- composeEnhancers(applyMiddleware(epicMiddleware))
+  composeEnhancers(applyMiddleware(epicMiddleware))
 );
-epicMiddleware.run(userEpic);
+epicMiddleware.run(rootEpic);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

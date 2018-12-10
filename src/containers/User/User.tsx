@@ -30,7 +30,6 @@ class User extends React.Component<UserProps, UserState> {
   // }
 
   handleChange = (selected: ValueType<OptionType>) => {
-    debugger;
     this.setState({ role: selected as OptionType })
   }
   handleChange2 = (option: ValueType<OptionType>) => {

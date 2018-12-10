@@ -53,3 +53,15 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 4. use som mixin
 5. add more scss variables
 6. deploy to surge
+----------------------------------09.12.2018
+to analyze performace go to localhost:3000/?react_perf
+add react addons per
+import it in app component and place on window.Perf = Perf;
+Perf.start() in component did mount in set imediate
+in set timeout in 5s call stop and print wasted
+Perf.stop();
+Perf.printWasted();
+
+try to use react pure component
+npm install --save why-did-you-update
+

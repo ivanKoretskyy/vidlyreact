@@ -1,0 +1,20 @@
+p:hover {
+  background-color: cornflowerblue;
+}
+
+@keyframes widthee  {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 600px;
+  }
+}
+
+.row {
+  opacity: 0.5;
+  width: 50px;
+}
+.row:hover {
+  animation: widthee 0.5s forwards;
+}
