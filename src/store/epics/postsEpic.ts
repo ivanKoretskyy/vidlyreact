@@ -14,8 +14,7 @@ export const postsEpic = (action$: Observable<any>) => {
     mergeMap((action: any) =>
       ajax.getJSON(`https://jsonplaceholder.typicode.com/posts`).pipe(
         map((response: any) => {
-          const response2 = response.concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response).concat(response);
-          return fetchPostsSuccess(response2)
+          return fetchPostsSuccess(response)
         })
       ))
   )
