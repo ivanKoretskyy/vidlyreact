@@ -6,6 +6,7 @@ export interface LoginProps {
   counter?: number;
   onIncrement?: any;
   onfetchUser?: any
+  auth?: any;
 }
  
 export interface LoginState {
@@ -13,6 +14,10 @@ export interface LoginState {
  
 class Login extends React.Component<LoginProps, LoginState> {
   //state = { :  }
+
+  login = () => {
+    this.props.auth.login();
+  }
   render() { 
     console.log(this.props);
     return (
@@ -20,7 +25,7 @@ class Login extends React.Component<LoginProps, LoginState> {
         <button onClick={() => this.props.onIncrement()}>Plus</button>
         <button onClick={() => this.props.onfetchUser()}>Minus</button>
         counter value {this.props.counter}
-        
+        <button onClick={this.login}>login</button>
       </div>
     );
   }

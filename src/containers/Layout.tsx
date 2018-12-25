@@ -4,8 +4,10 @@ import Navigation from '../components/Navigation/Navigation';
 import Main from './Main/Main';
 import { BrowserRouter } from 'react-router-dom';
 import SideBar from './SideBar/SideBar';
+import Auth from '../Auth/Auth';
 
 export interface LayoutProps {
+  history?: any;
   
 }
  
@@ -15,13 +17,20 @@ export interface LayoutState {
  
 class Layout extends React.Component<LayoutProps, LayoutState> {
   state = { showSideNav: false }
+  auth: any;
+
+  constructor(props: LayoutProps) {
+    super(props);
+
+    this.auth = new Auth(this.props.history);
+  }
+
   showSideNavHandler() {
     this.setState(prevState => ({showSideNav: !prevState.showSideNav}))
   }
   render() {
     const sideClass = classes.SideNav + (this.state.showSideNav ? ' ' + classes.ShowSideNav: '')
     return (
-      <BrowserRouter>
         <div className={classes.Container}>
       
           <header className={classes.Header}>
@@ -34,14 +43,13 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
             </aside>
           
               <section className={classes.MainContent}>
-                <Main />
+                <Main auth={this.auth} {...this.props}/>
               </section>
           
           </section>
           <footer className={classes.Footer}>Footer</footer>
     
       </div>
-    </BrowserRouter>
     );
   }
 }

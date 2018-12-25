@@ -65,3 +65,13 @@ Perf.printWasted();
 try to use react pure component
 npm install --save why-did-you-update
 
+------------------------------
+auth :
+1 install deps > npm install auth0-js@9.8.0 auth0-lock@11.10.0 express@4.16.3 express-jwt@5.3.1 express-jwt-authz@1.0.0 jwks-rsa@1.3.0 npm-run-all@4.1.3 react-router-dom@4.3.1
+
+2 . sign in to auth0 and create application.
+3. create .env file with auth env variable
+4. create auth.ts class with props and methods for authorization
+5.in app.ts create instance of auth.ts file (in constructor
+6. pass auth object to other components
+7. in dashboard add login button

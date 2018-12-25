@@ -6,7 +6,7 @@ import Login from '../Login/Login';
 import User from '../User/User';
 
 export interface MainProps {
-
+  auth?: any;
 }
 
 export interface MainState {
@@ -21,7 +21,7 @@ class Main extends React.Component<MainProps, MainState> {
         <Switch>
           <Route path='/dashboard' component={Dashboard} />
           <Route path='/contacts' component={Contacts} />
-          <Route path='/login' component={Login} />
+          <Route path='/login' render={() => <Login auth={this.props.auth} />}/>
           <Route path='/user' component={User} />
           <Redirect from='/' to='dashboard' />
         </Switch>
