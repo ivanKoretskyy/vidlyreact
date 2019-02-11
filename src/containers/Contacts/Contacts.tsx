@@ -21,7 +21,7 @@ componentDidMount() {
 
   render() { 
     return ( 
-      <div style={{ width: 1500, height: 1500 }} id="map" />
+      <div style={{ width: window.innerWidth - 300, height: window.innerHeight - 100 }} id="map" />
      );
   }
 }

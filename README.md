@@ -75,3 +75,11 @@ auth :
 5.in app.ts create instance of auth.ts file (in constructor
 6. pass auth object to other components
 7. in dashboard add login button
+
+
+- Apply  authentication from pluralsight
+- use react transition group
+- create interceptor
+- add iframes with videos
+- deploy to heroku
+- upload and save photo
